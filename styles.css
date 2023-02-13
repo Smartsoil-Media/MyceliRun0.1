@@ -1,3 +1,7 @@
+.heading-caption {
+  text-align: center;
+}
+
 h1 {
   font-family: 'Allerta Stencil', sans-serif;
 }
@@ -36,6 +40,7 @@ button {
 
 label {
   font-weight: bold;
+  text-align: start;
 }
 
 .heading {
@@ -62,8 +67,8 @@ label {
 
 @media (max-width: 767px) {
   .task-sheet-container {
-    width: 100%;
     max-width: 100%;
+    margin: 0 auto;
   }
 }
 
@@ -101,6 +106,10 @@ input {
   padding: 11px;
 }
 
+#date-input, #speacies {
+  padding: 20px;
+}
+
 
 .labels {
   margin: 15px 50px 0 50px;
@@ -108,7 +117,7 @@ input {
 
 @media (max-width: 767px) {
   .labels, #task-desc, #amount-harvested, #time-spent, #date-input,#speacies, button {
-    margin: 10px 0px;
+    margin: 10px 5%;
   }
 }
 

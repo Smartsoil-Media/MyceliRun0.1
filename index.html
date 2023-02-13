@@ -42,8 +42,7 @@
 
         <form name="task-form" id="task-form">
           <div class="input-header">
-            <label for="task-title"><p class="labels">Date :</p></label>
-            <label for="date-input"> </label>
+            <label for="date-input"><p class="labels">Date :</p></label>
             <input
               class="user-input"
               type="datetime-local"
@@ -67,7 +66,7 @@
           </div>
 
           <div class="input-footer">
-            <label for="task-desc" id="task-desc-input">
+            <label for="amount-harvested" id="task-desc-input">
               <p class="labels">Amount Harvested:</p>
             </label>
             <input
@@ -75,22 +74,18 @@
               type="number"
               name="amount-harvested"
               id="amount-harvested"
-              pattern="[0-9]*"
-              placeholder="Enter the tasks title"
+              pattern="[0-9]+([\.][0-9]+)?"
+              placeholder="Enter amount harvested (kg's)"
               required
             />
-            <label for="task-desc" id="task-desc-input">
-              <p class="labels">Speacies:</p>
-            </label>
-            <input
-              class="user-input"
-              type="text"
-              name="speacies"
-              id="speacies"
-              placeholder="Please enter the time spent"
-              pattern="[0-9]*"
-              required
-            />
+            <label for="speacies" id="task-desc-input">
+              <p class="labels">Speacies Farmed:</p></label
+            >
+            <select id="speacies" name="color">
+              <option value="red">Oyster</option>
+              <option value="green">Shitakki</option>
+              <option value="blue">Lions Main</option>
+            </select>
           </div>
           <button class="button-85">Submit</button>
         </form>
