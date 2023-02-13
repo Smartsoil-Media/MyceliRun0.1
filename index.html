@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap");
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="button&reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Myceli.Run</title>
+  </head>
+  <body>
+    <header>
+      <nav class="header-container">
+        <div class="header-logo">
+          <img
+            class="header-img"
+            src="/images/iphone-mushroom.png"
+            alt="main site logo"
+          />
+        </div>
+        <div class="links-container">
+          <ul>
+            <a href="#" class="main-nav-li">Home | </a>
+            <a href="#" class="main-nav-li">Register</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="task-sheet-container">
+        <h1 class="heading">Myceli.Run</h1>
+        <h3 class="heading-caption">Running your mushroom farm, digitally</h3>
+
+        <form name="task-form" id="task-form">
+          <div class="input-header">
+            <label for="task-title"><p class="labels">Date :</p></label>
+            <label for="date-input"> </label>
+            <input
+              class="user-input"
+              type="datetime-local"
+              name="date-input"
+              id="date-input"
+              placeholder="Please enter todays date"
+              required
+            />
+          </div>
+          <div class="input-body">
+            <label for="task-desc" id="task-desc-input">
+              <p class="labels">Task Description:</p>
+            </label>
+            <input
+              class="user-input"
+              type="text"
+              name="task-desc"
+              id="task-desc"
+              placeholder="task description"
+            />
+          </div>
+
+          <div class="input-footer">
+            <label for="task-desc" id="task-desc-input">
+              <p class="labels">Amount Harvested:</p>
+            </label>
+            <input
+              class="user-input"
+              type="number"
+              name="amount-harvested"
+              id="amount-harvested"
+              pattern="[0-9]*"
+              placeholder="Enter the tasks title"
+              required
+            />
+            <label for="task-desc" id="task-desc-input">
+              <p class="labels">Speacies:</p>
+            </label>
+            <input
+              class="user-input"
+              type="text"
+              name="speacies"
+              id="speacies"
+              placeholder="Please enter the time spent"
+              pattern="[0-9]*"
+              required
+            />
+          </div>
+          <button class="button-85">Submit</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

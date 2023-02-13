@@ -1,0 +1,134 @@
+h1 {
+  font-family: 'Allerta Stencil', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Allerta Stencil', sans-serif;
+
+}
+
+h2, h3, h4, p {
+  font-family: 'Abhaya Libre', serif;
+}
+
+header {
+  background-color: #2A2129;
+}
+
+
+.header-container {
+  display: flex;
+  padding: 20px 25px;
+  gap: 50px;
+
+
+
+}
+
+button {
+  width: 100px;
+  margin: 0 50px;
+}
+
+
+
+label {
+  font-weight: bold;
+}
+
+.heading {
+  padding-bottom: 3px;
+}
+
+#task-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  width: 90%;
+
+}
+
+.task-sheet-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  height: 100vh;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .task-sheet-container {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.links-container {
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+
+}
+
+.header-img {
+  width: 75px;
+  border-radius: 50%;
+
+}
+
+input {
+  padding: 10px 15px;
+}
+
+#task-desc, #amount-harvested, #time-spent, #date-input,#speacies {
+  margin: 0 50px;
+  width: 85%;
+}
+
+#task-desc {
+  height: 100px;
+}
+
+.input-body {
+  margin-top: 20px;
+}
+
+#task-title {
+  padding: 11px;
+}
+
+
+.labels {
+  margin: 15px 50px 0 50px;
+}
+
+@media (max-width: 767px) {
+  .labels, #task-desc, #amount-harvested, #time-spent, #date-input,#speacies, button {
+    margin: 10px 0px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.task-sheet-container {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
