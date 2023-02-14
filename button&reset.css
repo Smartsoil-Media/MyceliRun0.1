@@ -17,6 +17,10 @@ input, textarea, button, select {
     font: inheritl;
 }
 
+button {
+  margin: 50px;
+}
+
 
 
 /* CSS */

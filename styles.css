@@ -31,12 +31,23 @@ header {
 
 }
 
-button {
-  width: 100px;
-  margin: 0 50px;
+#submit-btn {
+  margin-top: 25px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border: 1px solid goldenrod;
+  border-radius: 5px;
+  padding: 15px 20px;
+  width: 25%;
+  transition: 0.2s;
 }
 
-
+#submit-btn:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
 
 label {
   font-weight: bold;
@@ -177,6 +188,19 @@ input:focus, select:focus {
   margin-top: 35px;
 }
 
+.privious-logs-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 85%;
+  margin:  0 5%;
+}
+
+@media (max-width: 767px) {
+  .privious-logs-container {
+    margin: 10px;
+
+  }
+}
 
 
 
