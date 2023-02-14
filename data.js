@@ -10,27 +10,22 @@ const indexedDB =
 var harvestDB = window.indexedDB.open("harvests", 1);
 
 harvestDB.onupgradeneeded = function(event) {
-  var date = new Date(document.getElementById("date-input").value);
-  var taskDesc = document.getElementById("task-desc").value;
-  var amountHarvested = document.getElementById("amount-harvested").value;
-  var speacies = document.getElementById("speacies").value;
   var db = event.target.result;
   var objectStore = db.createObjectStore("harvests", {
     keyPath: "id",
     autoIncrement: false
   });
 
-  objectStore.objectStore.createIndex("taskDesc", "taskDesc", { unique: false });
-  objectStore.objectStore.createIndex("amountHarvested", "amountHarvested", { unique: false });
-  objectStore.objectStore.createIndex("species", "species", { unique: false });
+  objectStore.createIndex("taskDesc", "taskDesc", { unique: false });
+  objectStore.createIndex("amountHarvested", "amountHarvested", { unique: false });
+  objectStore.createIndex("species", "species", { unique: false });
 };
 
-
-
-harvestDB.onerror = function(event) {
-  console.error("An error occurred while creating harvest database:", event.target.errorCode);
-};
-
+harvestDB.onsuccess = function(event) {
+  var db = event.target.result; }
+  if (db.objectStoreNames.contains("harvests")) {
+    let loggedTextEl = document.getElementById("logged-text");
+  }
 var taskDB = window.indexedDB.open("tasks", 1);
 
 taskDB.onupgradeneeded = function(event) {
@@ -44,7 +39,17 @@ taskDB.onupgradeneeded = function(event) {
 
 // END OF CREATING DATA BASES ************
 
-const loggedTextEl = document.getElementById("logged-text");
+
+
+
+
+
+
+
+
+
+
+
 
 // ADDING DATA TO DATABASES
 
