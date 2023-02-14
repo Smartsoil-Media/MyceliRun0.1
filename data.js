@@ -10,6 +10,10 @@ const indexedDB =
 var harvestDB = window.indexedDB.open("harvests", 1);
 
 harvestDB.onupgradeneeded = function(event) {
+  var date = new Date(document.getElementById("date-input").value);
+  var taskDesc = document.getElementById("task-desc").value;
+  var amountHarvested = document.getElementById("amount-harvested").value;
+  var speacies = document.getElementById("speacies").value;
   var db = event.target.result;
   var objectStore = db.createObjectStore("harvests", {
     keyPath: "id",
@@ -30,6 +34,7 @@ harvestDB.onerror = function(event) {
 var taskDB = window.indexedDB.open("tasks", 1);
 
 taskDB.onupgradeneeded = function(event) {
+  
   var db = event.target.result;
   var objectStore = db.createObjectStore("tasks", { keyPath: "id", autoIncrement: true });
   objectStore.createIndex("taskName", "taskName", { unique: false });
