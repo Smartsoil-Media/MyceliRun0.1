@@ -5,6 +5,10 @@ window.webkitIndexedDB ||
 window.msIndexedDB ||
 window.shimIndexedBD;
 
+var date = new Date(document.getElementById("date-input").value);
+var taskDesc = document.getElementById("task-desc").value;
+var amountHarvested = document.getElementById("amount-harvested").value;
+var speacies = document.getElementById("speacies").value;
 
 // CREATING THE DATA BASES 
 
