@@ -201,12 +201,17 @@ input:focus, select:focus {
   }
 }
 
+.result-text {
+  font-weight: bold;
+}
 
+.result-text-results {
+  font-weight: 100;
+}
 
-
-
-
-
+.logged-text {
+  text-align: center;
+}
 
 
 
