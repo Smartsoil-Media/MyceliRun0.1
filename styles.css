@@ -95,9 +95,17 @@ label {
 }
 
 input, select {
-  padding: 2px 10px 5px 10px;
+  padding: 30px;
   border: solid 1px goldenrod;
 }
+
+@media (max-width: 767px) {
+  input, select {
+    padding: 2px 10px 5px 10px;
+    border: solid 1px goldenrod;
+  }
+}
+
 input:focus, select:focus {
   padding: 2px 10px 5px 10px;
   margin-top: 0;
@@ -143,6 +151,7 @@ input:focus, select:focus {
 @media (max-width: 767px) {
  #task-desc, #amount-harvested, #time-spent, #date-input,#speacies, button {
     margin: 10px 2px;
+    padding: 25px;
   }
 }
 
