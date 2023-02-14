@@ -28,7 +28,8 @@ document.getElementById("task-form").addEventListener("submit", function(event) 
       var transaction = db.transaction("harvests", "readwrite");
       var objectStore = transaction.objectStore("harvests");
       var request = objectStore.add(harvest);
-      loggedTextEl.innerHTML += ` New form submitted at ${id} you have have ${harvest.leng} `
+      loggedTextEl.innerHTML = ""
+      loggedTextEl.innerHTML += ` New form submitted at ${id} `
   
       request.onsuccess = function(event) {
         console.log("Data has been added to the database");
@@ -36,6 +37,7 @@ document.getElementById("task-form").addEventListener("submit", function(event) 
   
       request.onerror = function(event) {
         console.log("Data could not be added to the database");
+        loggedTextEl.innerHTML += ` you have had an eroor, sorry :( `
       };
     };
   
