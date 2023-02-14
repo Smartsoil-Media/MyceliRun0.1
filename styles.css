@@ -109,10 +109,10 @@ input, select {
 }
 
 input:focus, select:focus {
-  padding: 2px 10px 5px 10px;
+  padding: 25px 10px 25px 20px;
   margin-top: 0;
   outline: none;
-  border: solid 3px rgb(232, 209, 153);
+  border: solid 1px rgb(232, 209, 153);
 }
 
 #task-desc, #amount-harvested, #time-spent, #date-input,#speacies {
@@ -173,7 +173,9 @@ input:focus, select:focus {
 }
 
 
-
+.analictis {
+  margin-top: 35px;
+}
 
 
 
