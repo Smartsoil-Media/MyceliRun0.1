@@ -15,9 +15,9 @@ harvestDB.onupgradeneeded = function (event) {
   var db = event.target.result;
   var objectStore = db.createObjectStore("harvests", { keyPath: "id", autoIncrement: false});
 
-  objectStore.createIndex("notes", "idNotes", {unique: false});
-  objectStore.createIndex("amountHavested", 1, {unique: false});
-  objectStore.createIndex("speciesFarmered", "speciesName", {unique: false});
+  objectStore.createIndex("taskDesc", "idNotes", {unique: false});
+  objectStore.createIndex("amountHarvested", "amountHarvested", {unique: false});
+  objectStore.createIndex("speacies", "speciesName", {unique: false});
 };
 
 
