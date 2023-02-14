@@ -25,23 +25,24 @@ document.getElementById("task-form").addEventListener("submit", function(event) 
   
     request.onsuccess = function(event) {
       var db = event.target.result;
-      var transaction = db.transaction("harvests", "readwrite");
-      var objectStore = transaction.objectStore("harvests");
-      var request = objectStore.add(harvest);
-      loggedTextEl.innerHTML += ` New form submitted at ${id} `
-  
-  
-      request.onerror = function(event) {
-        console.log("IndexedDB error: " + event.target.errorCode)
-        loggedTextEl.innerHTML += ` you have had an error, sorry :( `
-      };
-    };
-  
-    request.onerror = function(event) {
-      console.log("IndexedDB error: " + event.target.errorCode);
-      loggedTextEl.innerHTML += ` you have had an error, sorry :( `
+      if (db.objectStoreNames.contains("harvests")) {
+        var transaction = db.transaction("harvests", "readwrite");
+        var objectStore = transaction.objectStore("harvests");
+        var request = objectStore.add(harvest);
+    
+        loggedTextEl.innerHTML += ` New form submitted at ${id} `;
+    
+        request.onerror = function(event) {
+          console.log("IndexedDB error: " + event.target.errorCode);
+          loggedTextEl.innerHTML += ` you have had an error, sorry :( `;
+        };
+      } else {
+        console.log("The 'harvests' object store does not exist.");
+        loggedTextEl.innerHTML += ` you have had an error, sorry :( `;
+      }
     };
 });
 
 
 // ADDING DATA TO DATABASES
+

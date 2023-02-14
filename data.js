@@ -1,3 +1,11 @@
+const indexedDB = 
+window.indexedDB ||
+window.mozIndexedDB ||
+window.webkitIndexedDB ||
+window.msIndexedDB ||
+window.shimIndexedBD;
+
+
 // CREATING THE DATA BASES 
 
 
@@ -29,4 +37,3 @@ taskDB.onupgradeneeded = function (event) {
 
 
 // END OF CREATING DATA BASES ************
-
