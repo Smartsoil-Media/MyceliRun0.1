@@ -1,9 +1,3 @@
-const indexedDB =
-  window.indexedDB ||
-  window.mozIndexedDB ||
-  window.webkitIndexedDB ||
-  window.msIndexedDB;
-
 const request = indexedDB.open("harvestingDataBase", 1);
 
 request.onerror = function (event) {
