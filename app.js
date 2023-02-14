@@ -6,7 +6,6 @@ const loggedTextEl = document.getElementById("logged-text")
 
 document.getElementById("task-form").addEventListener("submit", function(event) {
     event.preventDefault();
-    loggedTextEl.innerHTML = ""
   
     var date = new Date(document.getElementById("date-input").value);
     var taskDesc = document.getElementById("task-desc").value;

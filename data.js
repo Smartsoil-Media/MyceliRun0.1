@@ -13,7 +13,6 @@ harvestDB.onupgradeneeded = function (event) {
 };
 
 
-
 harvestDB.onerror = function (event) {
   console.error("An error occurred while creating harvest database:", event.target.errorCode);
 };
