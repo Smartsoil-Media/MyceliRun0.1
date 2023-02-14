@@ -6,6 +6,7 @@ const loggedTextEl = document.getElementById("logged-text")
 
 document.getElementById("task-form").addEventListener("submit", function(event) {
     event.preventDefault();
+    loggedTextEl.innerHTML = ""
   
     var date = new Date(document.getElementById("date-input").value);
     var taskDesc = document.getElementById("task-desc").value;
@@ -28,7 +29,6 @@ document.getElementById("task-form").addEventListener("submit", function(event) 
       var transaction = db.transaction("harvests", "readwrite");
       var objectStore = transaction.objectStore("harvests");
       var request = objectStore.add(harvest);
-      loggedTextEl.innerHTML = ""
       loggedTextEl.innerHTML += ` New form submitted at ${id} `
   
       request.onsuccess = function(event) {
