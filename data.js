@@ -1,9 +1,4 @@
-const indexedDB =
-  window.indexedDB ||
-  window.mozIndexedDB ||
-  window.webkitIndexedDB ||
-  window.msIndexedDB ||
-  window.shimIndexedBD;
+const indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || { open: function() { throw new Error("IndexedDB not supported"); } };
 
 // CREATING THE DATA BASES
 
