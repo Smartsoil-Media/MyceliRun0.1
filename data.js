@@ -22,9 +22,9 @@ harvestDB.onupgradeneeded = function(event) {
 
   objectStore.objectStore.createIndex("taskDesc", "taskDesc", { unique: false });
   objectStore.objectStore.createIndex("amountHarvested", "amountHarvested", { unique: false });
+  objectStore.objectStore.createIndex("species", "species", { unique: false });
 };
 
-  objectStore.objectStore.createIndex("species", "species", { unique: false });
 
 
 harvestDB.onerror = function(event) {
