@@ -33,9 +33,10 @@ request.onsuccess = function () {
       
       // update the UI with the retrieved data
       const formOne = document.getElementById("form-1");
-      const formTwo = document.getElementById("")
+      const formTwo = document.getElementById("form-2")
       formOne.innerHTML = `<p>Date: ${date}</p><p>Amount Harvested: ${amountHarvested}</p><p>Species: ${species}</p>`;
-      document.getElementById("container").appendChild(element);
+      formTwo.innerHTML = `<p>Date: ${date}</p><p>Amount Harvested: ${amountHarvested}</p><p>Species: ${species}</p>`;
+      document.getElementById("container").appendChild(formOne);
 
       cursor.continue();
     }
