@@ -22,14 +22,15 @@ harvestDB.onupgradeneeded = function(event) {
 };
 
 harvestDB.onsuccess = function(event) {
-  var db = event.target.result; }
+  var db = event.target.result;
   if (db.objectStoreNames.contains("harvests")) {
     let loggedTextEl = document.getElementById("logged-text");
   }
+};
+
 var taskDB = window.indexedDB.open("tasks", 1);
 
 taskDB.onupgradeneeded = function(event) {
-  
   var db = event.target.result;
   var objectStore = db.createObjectStore("tasks", { keyPath: "id", autoIncrement: true });
   objectStore.createIndex("taskName", "taskName", { unique: false });
@@ -39,18 +40,6 @@ taskDB.onupgradeneeded = function(event) {
 
 // END OF CREATING DATA BASES ************
 
-
-
-
-
-
-
-
-
-
-
-
-
 // ADDING DATA TO DATABASES
 
 document.getElementById("task-form").addEventListener("submit", function(event) {
@@ -59,7 +48,7 @@ document.getElementById("task-form").addEventListener("submit", function(event) 
   var date = new Date(document.getElementById("date-input").value);
   var taskDesc = document.getElementById("task-desc").value;
   var amountHarvested = document.getElementById("amount-harvested").value;
-  var speacies = document.getElementById("speacies").value;
+  var species = document.getElementById("species").value;
 
   var id = new Date().toISOString();
   var harvest = {
@@ -67,7 +56,7 @@ document.getElementById("task-form").addEventListener("submit", function(event) 
     date: date,
     taskDesc: taskDesc,
     amountHarvested: amountHarvested,
-    speacies: speacies
+    species: species
   };
 
   var request = window.indexedDB.open("harvests", 1);
@@ -79,6 +68,7 @@ document.getElementById("task-form").addEventListener("submit", function(event) 
       var objectStore = transaction.objectStore("harvests");
       var request = objectStore.add(harvest);
 
+      let loggedTextEl = document.getElementById("logged-text");
       loggedTextEl.innerHTML += ` New form submitted at ${id} `;
 
       request.onerror = function(event) {
