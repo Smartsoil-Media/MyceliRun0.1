@@ -16,12 +16,12 @@ harvestDB.onupgradeneeded = function(event) {
     autoIncrement: false
   });
 
-  objectStore.createIndex("taskDesc", "idNotes", { unique: false });
-  objectStore.createIndex("amountHarvested", "amountHarvested", {
-    unique: false
-  });
-  objectStore.createIndex("speacies", "speciesName", { unique: false });
+  objectStore.objectStore.createIndex("taskDesc", "taskDesc", { unique: false });
+  objectStore.objectStore.createIndex("amountHarvested", "amountHarvested", { unique: false });
 };
+
+  objectStore.objectStore.createIndex("species", "species", { unique: false });
+
 
 harvestDB.onerror = function(event) {
   console.error("An error occurred while creating harvest database:", event.target.errorCode);
