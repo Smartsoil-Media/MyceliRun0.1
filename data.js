@@ -65,7 +65,7 @@ document.getElementById("task-form").addEventListener("submit", function(event) 
     speacies: speacies
   };
 
-  // var request = window.indexedDB.open("harvests", 1);
+  var request = window.indexedDB.open("harvests", 1);
 
   request.onsuccess = function(event) {
     var db = event.target.result;
