@@ -55,6 +55,14 @@ label {
 
 }
 
+@media (max-width: 767px) {
+  #task-form {
+    width: 100%;
+    padding: 0;
+    margin-top: 10px;
+  } 
+}
+
 .task-sheet-container {
   display: flex;
   flex-direction: column;
@@ -69,6 +77,7 @@ label {
   .task-sheet-container {
     max-width: 100%;
     margin: 0 auto;
+    padding: 25px 25px;
   }
 }
 
@@ -82,16 +91,23 @@ label {
 .header-img {
   width: 75px;
   border-radius: 50%;
-
+  border: white 1px solid;
 }
 
-input {
-  padding: 10px 15px;
+input, select {
+  padding: 2px 10px 5px 10px;
+  border: solid 1px goldenrod;
+}
+input:focus, select:focus {
+  padding: 2px 10px 5px 10px;
+  margin-top: 0;
+  outline: none;
+  border: solid 3px rgb(232, 209, 153);
 }
 
 #task-desc, #amount-harvested, #time-spent, #date-input,#speacies {
-  margin: 0 50px;
-  width: 85%;
+  margin: 0 5%;
+  width: 100%;
 }
 
 #task-desc {
@@ -112,15 +128,32 @@ input {
 
 
 .labels {
-  margin: 15px 50px 0 50px;
+  margin: 0;
+  margin-top: 15px;
+
 }
 
 @media (max-width: 767px) {
-  .labels, #task-desc, #amount-harvested, #time-spent, #date-input,#speacies, button {
-    margin: 10px 5%;
+  .labels {
+    margin: 10px 2px 0px 2px ;
+    padding-bottom: 0;
   }
 }
 
+@media (max-width: 767px) {
+ #task-desc, #amount-harvested, #time-spent, #date-input,#speacies, button {
+    margin: 10px 2px;
+  }
+}
+
+/* #task-desc, #amount-harvested, #time-spent, #date-input,#speacies, button {
+  margin: 5px 5px;
+} */
+
+#task-desc, #amount-harvested, #time-spent, #date-input,#speacies, button 
+{
+  margin: 0;
+}
 
 
 
