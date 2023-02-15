@@ -1,24 +1,31 @@
 .heading-caption {
   text-align: center;
+  color:rgb(71, 255, 255);
+  
 }
 
 h1 {
   font-family: 'Allerta Stencil', sans-serif;
+  color: rgb(45, 255, 255);
+  
 }
 
 a {
   text-decoration: none;
   color: white;
   font-family: 'Allerta Stencil', sans-serif;
+  
 
 }
 
 h2, h3, h4, p {
   font-family: 'Abhaya Libre', serif;
+  
 }
 
 header {
   background-color: #2A2129;
+  
 }
 
 
@@ -26,6 +33,7 @@ header {
   display: flex;
   padding: 20px 25px;
   gap: 50px;
+  
 
 
 
@@ -36,26 +44,30 @@ header {
   background-color: black;
   color: white;
   font-weight: bold;
-  border: 1px solid goldenrod;
+  border: 1px solid rgb(185, 254, 254);
   border-radius: 5px;
   padding: 15px 20px;
   width: 25%;
   transition: 0.2s;
+  
 }
 
 #submit-btn:hover {
   background-color: white;
   color: black;
   cursor: pointer;
+  
 }
 
 label {
   font-weight: bold;
   text-align: start;
+
 }
 
 .heading {
   padding-bottom: 3px;
+  
 }
 
 #task-form {
@@ -63,6 +75,7 @@ label {
   flex-direction: column;
   margin-top: 50px;
   width: 90%;
+  
 
 }
 
@@ -71,6 +84,7 @@ label {
     width: 100%;
     padding: 0;
     margin-top: 10px;
+    
   } 
 }
 
@@ -79,13 +93,14 @@ label {
   flex-direction: column;
   align-items: center;
   padding: 50px;
-  max-width: 750px;
+  max-width: 780px;
   margin: 0 auto;
+  
 }
 
 @media (max-width: 767px) {
   .task-sheet-container {
-    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     padding: 25px 25px;
   }
@@ -95,6 +110,7 @@ label {
   margin-right: auto;
   margin-top: auto;
   margin-bottom: auto;
+  
 
 }
 
@@ -107,21 +123,24 @@ label {
 input, select {
   padding: 30px;
   border: solid 1px goldenrod;
+  
 }
 
 @media (max-width: 767px) {
   input, select {
     padding: 25px 10px 25px 10px;
-    border: solid 1px goldenrod;
+    border: solid 1px rgb(71, 255, 255);
     border-radius: 5px;
+ 
   }
 }
 
 input:focus, select:focus {
   padding: 25px 10px 25px 20px;
   margin-top: 0;
+
   outline: none;
-  border: solid 1px rgb(232, 209, 153);
+  border: solid 1px rgb(206, 251, 251);
 }
 
 #task-desc, #amount-harvested, #time-spent, #date-input,#speacies {
@@ -133,22 +152,20 @@ input:focus, select:focus {
   height: 100px;
 }
 
-.input-body {
-  margin-top: 20px;
-}
 
-#task-title {
-  padding: 11px;
-}
 
 #date-input, #speacies {
   padding: 20px;
+  
 }
 
 
 .labels {
   margin: 0;
+  margin-bottom: 2px;
   margin-top: 15px;
+  color: white;
+  
 
 }
 
@@ -182,23 +199,7 @@ input:focus, select:focus {
 }
 
 
-.analictis {
-  margin-top: 35px;
-}
 
-.privious-logs-container {
-  display: flex;
-  flex-direction: column;
-  max-width: 85%;
-  margin:  0 5%;
-}
-
-@media (max-width: 767px) {
-  .privious-logs-container {
-    margin: 10px;
-
-  }
-}
 
 .result-text {
   font-style: italic;
@@ -208,14 +209,12 @@ input:focus, select:focus {
   font-weight: 100;
 }
 
-.logged-text {
-  text-align: center;
-}
 
 .result-test-results {
-  color: rgb(0, 0, 0);
+  color: rgb(185, 254, 254);
   font-weight: bold;
   font-style: normal;
+  
 }
 
 #red {
@@ -226,19 +225,24 @@ input:focus, select:focus {
 .injected-html-div {
   padding: 25px;
   line-height: 22px;
-  border: goldenrod 2px solid;
+  border: rgb(185, 254, 254) 2px solid;
   border-radius: 5px;
   font-size: 20px;
+  background-color: black;
+  color: white;
+  
 }
 
 .new-froms-container {
-  width: 93vw;
+  width: 100s;
   margin: 0px 25px;
+  
 }
 
 
 
 .task-sheet-container {
+  background-color: rgb(49, 49, 49);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
@@ -248,6 +252,7 @@ input:focus, select:focus {
   width: 100%;
   gap: 1em;
   margin: 25px 0;
+  
 
  }
 
@@ -263,4 +268,5 @@ input:focus, select:focus {
   margin-top: 25px;
   font-weight: bold;
   font-size: 25px;
+  color: rgb(45, 255, 255) ;
  }
