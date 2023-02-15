@@ -122,7 +122,8 @@ label {
 
 input, select {
   padding: 30px;
-  border: solid 1px goldenrod;
+  border: solid 1px rgb(71, 255, 255);
+  border-radius: 5px;
   
 }
 
@@ -230,7 +231,14 @@ input:focus, select:focus {
   font-size: 20px;
   background-color: black;
   color: white;
+  width: 45%;
   
+}
+
+@media (max-width: 767px) {
+  .injected-html-div {
+    width: 100%;
+  }
 }
 
 .new-froms-container {
@@ -243,15 +251,18 @@ input:focus, select:focus {
 
 .task-sheet-container {
   background-color: rgb(49, 49, 49);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  box-shadow: rgba(50, 50, 100, 1)
+
 }
 
 .form-result-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 100%;
   gap: 1em;
   margin: 25px 0;
+  max-width: 850px;
   
 
  }
