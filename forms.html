@@ -35,12 +35,70 @@
         </div>
       </nav>
     </header>
+    <section>
+      <form name="update-form" class="hidden" id="update-form" step="any">
+        <div id="form-container">
+          <div class="input-header">
+            <label for="date-input"><p class="labels">Date :</p></label>
+            <input
+              class="user-input"
+              type="datetime-local"
+              name="date-input"
+              id="date-input"
+              placeholder="Please enter todays date"
+              required
+            />
+          </div>
+          <div class="input-footer">
+            <label for="amount-harvested" id="task-desc-input">
+              <p class="labels">Amount Harvested:</p>
+            </label>
+            <input
+              step="any"
+              class="user-input"
+              type="number"
+              inputmode="decimal"
+              name="amount-harvested"
+              id="amount-harvested"
+              pattern="[0-9]+(\.[0-9]*)?"
+              placeholder="Enter amount harvested (kg's)"
+              required
+            />
+            <label for="species" id="task-desc-input">
+              <p class="labels">Species Farmed:</p>
+            </label>
+            <select id="species" name="color">
+              <option value="Oyster">Oyster</option>
+              <option value="Shitakki">Shitakki</option>
+              <option value="Lions-Main">Lions Main</option>
+            </select>
+            <label for="task-desc" id="task-desc-input">
+              <p class="labels">Notes</p>
+            </label>
+            <input
+              class="user-notes"
+              type="text"
+              name="notes"
+              id="notes"
+              placeholder="A place for notes"
+            />
+          </div>
+          <button class="button-85" type="submit" id="submit-btn">
+            Submit
+          </button>
+        </div>
+      </form>
+    </section>
+
     <main>
       <p id="total-amount-harvested"></p>
-      <div class="for-page-container">
+      <div class="for-page-container" id="for-page-container">
         <div id="form-1"></div>
       </div>
     </main>
+    <h3 class="heading-caption">
+      You can edit forms by clicking on a div (not functional yet)
+    </h3>
 
     <script src="formDisplay.js"></script>
   </body>

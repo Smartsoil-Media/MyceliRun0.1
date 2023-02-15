@@ -25,14 +25,14 @@ const IDB = (function init() {
         if (result.length > 0) {
           for (let i = 0; i < result.length; i++) {
             resultHtml += `
-              <div class="injected-html">
-                <p class="result-text"> Date: <span class="result-test-results">  ${result[i].dateLogged} </span> 
+              <div class="injected-html" id="injected-html">
+                <p class="result-text" data-key="${result[i].id}" > Date: <span class="result-test-results">  ${result[i].dateLogged} </span> 
                 </p>
-                <p class="result-text"> Harvested (kg's): <span class="result-test-results">  ${result[i].amountHarvested} </span> 
+                <p class="result-text" data-key="${result[i].id}" > Harvested (kg's): <span class="result-test-results">  ${result[i].amountHarvested} </span> 
                 </p>
-                <p class="result-text"> Speacies Farmed: <span class="result-test-results">  ${result[i].speciesFarmed} </span> 
+                <p class="result-text" data-key="${result[i].id}" > Speacies Farmed: <span class="result-test-results">  ${result[i].speciesFarmed} </span> 
                 </p>
-                <p class="result-text"> Notes: <span class="result-test-results">  ${result[i].notesTaken} </span> 
+                <p class="result-text" data-key="${result[i].id}" > Notes: <span class="result-test-results">  ${result[i].notesTaken} </span> 
                 </p>
               </div>`;
           } 
@@ -51,7 +51,49 @@ const IDB = (function init() {
         console.warn(err);
       };
     });
+    
+
   
+document.getElementById('for-page-container').addEventListener('click', (ev) => {
+    let div = ev.target.closest('[data-key]')
+    console.log(div);
+    let id = div.getAttribute('data-key')
+    console.log(div, id);
+    let tx = makeTX('harvestData', 'readonly')
+    tx.oncomplete = (ev) =>{
+      console.log(id)
+    }
+    let store = tx.objectStore('harvestData')
+    let req = store.get(id)
+    req.onsuccess = (ev) => {
+      console.log("DIV CLICKED & DATA COLLECTED")
+      let updateForm = document.getElementById("update-form")
+      updateForm.classList.remove("hidden");
+
+
+      let request = ev.target
+      let harvest = request.result
+      document.getElementById('date-input').value = harvest.dateLogged
+      document.getElementById('amount-harvested').value = harvest.amountHarvested
+      document.getElementById('species').value = harvest.speciesFarmed
+      document.getElementById('notes').value = harvest.notesTaken
+  
+    }
+    req.onerror = (err) => {
+      console.log("THAT DIV DIDN'T CLICK")
+    }
+  })
+
+  function makeTX(storeName, mode) {
+    let tx = db.transaction(storeName, mode);
+    tx.onerror = (err) => {
+        console.warn(err)
+    }
+    return tx;
+  }
+  
+
+
     DBOpenReq.addEventListener('upgradeneeded', (ev) => {
       db = ev.target.result;
       let oldVersion = ev.oldVersion;
