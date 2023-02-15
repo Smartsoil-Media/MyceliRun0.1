@@ -74,7 +74,36 @@
     margin-top: 50px; 
     color: white;
     padding: 8px 16px;
+}
 
+@media (max-width: 767px) {
+    #form-1 {
+    
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row-reverse;
+    grid-gap: 20px;
+
+    }
+}
+
+@media (min-width: 1250px) {
+    #form-1 {
+    
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: row-reverse;
+    grid-gap: 20px;
+
+    }
+}
+
+@media (min-width: 1750px) {
+    #form-1 {
+    
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-flow: row-reverse;
+    grid-gap: 20px;
+
+    }
 }
 
 .injected-html {
