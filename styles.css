@@ -246,6 +246,7 @@ input:focus, select:focus {
 .form-result-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 100%;
   gap: 1em;
   margin: 25px 0;
