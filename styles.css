@@ -202,7 +202,7 @@ input:focus, select:focus {
 }
 
 .result-text {
-  font-weight: bold;
+  font-style: italic;
 }
 
 .result-text-results {
@@ -213,11 +213,47 @@ input:focus, select:focus {
   text-align: center;
 }
 
+.result-test-results {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-style: normal;
+}
+
+#red {
+  color: red;
+}
 
 
+.injected-html-div {
+  padding: 25px;
+  line-height: 22px;
+  border: goldenrod 2px solid;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.new-froms-container {
+  width: 93vw;
+  margin: 0px 25px;
+}
 
 
 
 .task-sheet-container {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
+
+.form-result-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1em;
+  margin: 25px 0;
+
+ }
+
+ #total-amount-harvested {
+  margin-top: 25px;
+  font-weight: bold;
+  font-size: 25px;
+ }
