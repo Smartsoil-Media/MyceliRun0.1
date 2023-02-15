@@ -263,6 +263,7 @@ input:focus, select:focus {
   gap: 1em;
   margin: 25px 0;
   max-width: 850px;
+  flex-direction: row-reverse;
   
 
  }
@@ -270,6 +271,7 @@ input:focus, select:focus {
  @media (max-width: 767px) {
   .form-result-container { 
     flex-direction: column;
+    flex-direction: column-reverse;
     
 
   }
@@ -281,3 +283,30 @@ input:focus, select:focus {
   font-size: 25px;
   color: rgb(45, 255, 255) ;
  }
+
+
+
+
+
+
+/* FORM PAGE */
+
+.for-page-container {
+  margin: 0 15px;
+  display: flex;
+  flex-direction: row;
+
+  
+}
+
+.injected-html {
+  padding: 25px;
+  line-height: 22px;
+  border: rgb(185, 254, 254) 2px solid;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  margin-top: 15px;
+  
+}

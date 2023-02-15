@@ -1,69 +1,67 @@
-
-
-
-
-
-
-
-
-// POTENTIAL USFULL - RETURNS AN ITEM BY ITS KEY ID
-// const findIndex0 = 1
-// const result = request.result
-//    const index0 = result.findIndex((harvest) => harvest.id === findIndex0); 
-//    if(index0 !== -1) {
-//      const harvest = result[index0];
-//      formTwo.innerHTML = `<li data-key="${harvest.id} id="red" ><span>${harvest.amountHarvested} </span> ${harvest.speciesFarmed}</li>`;
-//    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const request = indexedDB.open("harvestingDataBase", 1);
-
-// request.onerror = function (event) {
-//   console.error("An error, opps");
-//   console.error(event);
-// }
-
-// request.onupgradeneeded = function () {
-//   const db = request.result;
-//   const store = db.createObjectStore("harvests", {keyPath: "id" })
-//   store.createIndex("date_created", ["date"], {unique: false})
-//   store.createIndex("amount_harvested_and_species", ["amount_harvested", "species"], {unique: false})
-// };
-
-// request.onsuccess = function () {
-//   const db = request.result;
-//   const transaction = db.transaction("harvests", "readwrite");
-//   const store = transaction.objectStore("harvests");
+const IDB = (function init() {
+    let db = null;
+    let objectStore = null;
+    let DBOpenReq = indexedDB.open('MyceliRunDB', 2); 
+    
+    DBOpenReq.addEventListener('error', (err) => {
+      console.warn(err);
+    })
   
-//   const cursor = store.openCursor();
-//   cursor.onsuccess = function(event) {
-//     const cursor = event.target.result;
-//     if (cursor) {
-//       const date = cursor.value.date;
-//       const amountHarvested = cursor.value.amount_harvested;
-//       const species = cursor.value.species;
-      
-//       // update the UI with the retrieved data
-//       const formOne = document.getElementById("form-1");
-//       const formTwo = document.getElementById("form-2")
-//       formOne.innerHTML = `<p>Date: ${date}</p><p>Amount Harvested: ${amountHarvested}</p><p>Species: ${species}</p>`;
-//       formTwo.innerHTML = `<p>Date: ${date}</p><p>Amount Harvested: ${amountHarvested}</p><p>Species: ${species}</p>`;
-//       document.getElementById("container").appendChild(formOne);
-
-//       cursor.continue();
-//     }
-//   };
-// };
+    DBOpenReq.addEventListener('success', (ev) => {
+      db = ev.target.result;
+      console.log('success', db);
+  
+      let tx = db.transaction('harvestData', 'readwrite');
+      let store = tx.objectStore('harvestData');
+      let getReq = store.getAll();
+  
+      getReq.onsuccess = (ev) => {
+        let request = ev.target;
+        console.log({request});
+  
+        const result = request.result;
+        let resultHtml = '';
+        let formOne = document.getElementById("form-1")
+        if (result.length > 0) {
+          for (let i = 0; i < result.length; i++) {
+            resultHtml += `
+              <div class="injected-html">
+                <p class="result-text"> Date: <span class="result-test-results">  ${result[i].dateLogged} </span> 
+                </p>
+                <p class="result-text"> Harvested (kg's): <span class="result-test-results">  ${result[i].amountHarvested} </span> 
+                </p>
+                <p class="result-text"> Speacies Farmed: <span class="result-test-results">  ${result[i].speciesFarmed} </span> 
+                </p>
+                <p class="result-text"> Notes: <span class="result-test-results">  ${result[i].notesTaken} </span> 
+                </p>
+              </div>`;
+          } 
+          formOne.innerHTML = resultHtml;
+        } 
+  
+        let totalAmountHarvested = 0;
+        let totalAmountHarvestedEl = document.getElementById("total-amount-harvested")
+        request.result.forEach(harvest => {
+          totalAmountHarvested += parseFloat(harvest.amountHarvested);
+        });
+        totalAmountHarvestedEl.innerHTML =`Total Amount Harvested: ${totalAmountHarvested}KG's!`
+      };
+  
+      getReq.onerror = (err) => {
+        console.warn(err);
+      };
+    });
+  
+    DBOpenReq.addEventListener('upgradeneeded', (ev) => {
+      db = ev.target.result;
+      let oldVersion = ev.oldVersion;
+      let newVersion = ev.newVersion || db.version;
+      console.log('DB updated from version', oldVersion, 'to', newVersion );
+      console.log('upgrade', db);
+    
+      if (!db.objectStoreNames.contains('harvestData')) {
+        objectStore = db.createObjectStore('harvestData', {keyPath: "id" });  
+      }
+    });
+  })();
+  
