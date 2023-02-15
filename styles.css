@@ -79,7 +79,6 @@ label {
   flex-direction: column;
   align-items: center;
   padding: 50px;
-  height: 100vh;
   max-width: 750px;
   margin: 0 auto;
 }
@@ -246,11 +245,18 @@ input:focus, select:focus {
 .form-result-container {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   width: 100%;
   gap: 1em;
   margin: 25px 0;
 
+ }
+
+ @media (max-width: 767px) {
+  .form-result-container { 
+    flex-direction: column;
+    
+
+  }
  }
 
  #total-amount-harvested {
