@@ -39,7 +39,8 @@ header {
 
 }
 
-#submit-btn {
+#submit-btn, #update-btn, #delete-btn {
+
   margin-top: 25px;
   background-color: black;
   color: white;
@@ -51,6 +52,7 @@ header {
   transition: 0.2s;
   
 }
+
 
 #submit-btn:hover {
   background-color: white;
@@ -309,4 +311,9 @@ input:focus, select:focus {
   color: white;
   margin-top: 15px;
   
+}
+
+
+.hidden {
+  display: none;
 }

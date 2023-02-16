@@ -178,7 +178,7 @@
 
 
 
-#submit-btn {
+#submit-btn, #update-btn {
     margin-top: 25px;
     background-color: black;
     color: white;
@@ -191,7 +191,7 @@
     
   }
   
-  #submit-btn:hover {
+  #submit-btn:hover, #update-btn {
     background-color: white;
     color: black;
     cursor: pointer;

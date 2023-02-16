@@ -52,9 +52,52 @@ const IDB = (function init() {
       };
     });
     
-
+      document.getElementById('update-btn').addEventListener('click', (ev) => {
+      ev.preventDefault();
+    
+      let dateLogged = document.getElementById('date-input').value.trim();
+      let amountHarvested = document.getElementById('amount-harvested').value;
+      let speciesFarmed = document.getElementById('species').value;
+      let notesTaken = document.getElementById('notes').value.trim();
+      let updateForm = document.getElementById('update-form')
+    
+      let key = updateForm.getAttribute('data-key')
+      if (key) {
+        let harvest = {
+          id: key,
+          dateLogged: dateLogged,
+          amountHarvested: amountHarvested,
+          speciesFarmed: speciesFarmed,
+          notesTaken: notesTaken
+        }
+        let tx = makeTX('harvestData', 'readwrite');
+        tx.oncomplete = (ev)=> {
+          console.log(ev)
+        }
+        tx.onerror = (err) => {
+          console.warn(err);
+        }
+        let store = tx.objectStore('harvestData');
+        let request = store.put(harvest)
+      
+        request.onsuccess = (ev)=> {
+          console.log('sucessfully updated an object', ev)
+          let updateBtn = document.getElementById('update-btn')
+          reloadpage()
+          updateBtn.classList.add('hidden')
+        }
+        request.onerror = (err) => {
+          console.log('error inrequest to av', err)
+      
+        }  
+      }
+    
+    })
   
 document.getElementById('for-page-container').addEventListener('click', (ev) => {
+  ev.preventDefault();
+
+  
     let div = ev.target.closest('[data-key]')
     console.log(div);
     let id = div.getAttribute('data-key')
@@ -77,6 +120,7 @@ document.getElementById('for-page-container').addEventListener('click', (ev) => 
       document.getElementById('amount-harvested').value = harvest.amountHarvested
       document.getElementById('species').value = harvest.speciesFarmed
       document.getElementById('notes').value = harvest.notesTaken
+      updateForm.setAttribute('data-key', harvest.id)
   
     }
     req.onerror = (err) => {
@@ -91,6 +135,17 @@ document.getElementById('for-page-container').addEventListener('click', (ev) => 
     }
     return tx;
   }
+
+  function reloadpage(){
+    var returnURL = "https://stately-buttercream-702f49.netlify.app/" + Math.random() * 100;
+
+    setTimeout(function() 
+    {
+        window.location=returnURL; 
+    }, 50 );
+
+
+}
   
 
 
