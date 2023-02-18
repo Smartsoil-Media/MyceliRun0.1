@@ -365,8 +365,8 @@ transform:scale(120%);
 }
 
 @media (max-width: 767px) {
-  a {
+  a, a:hover {
     border: none;
-    padding: none;;
+    padding: none;
   }
 }
