@@ -184,7 +184,7 @@
   
   a:hover {
     border-right: solid 5px #ffff;
-    padding-right: 25px;
+    padding-right: 10px;
   
   }
   
@@ -210,12 +210,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.5em;
+    gap: 0.5em;
   }
   
   
   .main-nav-icon:hover {
-  transform:scale(120%);
+  transform:scale(130%);
     cursor: pointer;
   }
   
@@ -227,6 +227,7 @@
       transition: 0.25s;
       border-radius: 5%;
       padding: 5px;
+      transform:scale(100%);
   
     }
   }
