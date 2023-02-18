@@ -320,7 +320,7 @@ input:focus, select:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 2em;
 }
 a {
   background-color: white;
