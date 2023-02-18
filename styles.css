@@ -322,16 +322,7 @@ input:focus, select:focus {
   justify-content: center;
   gap: 2em;
 }
-a {
-  background-color: white;
-  border-radius: 50%;
-  padding: 15px;
-  border: solid black 2px;
 
-}
-a:hover {
-  border: gold solid 2px;
-}
 
 .main-nav-icon:hover {
 transform:scale(120%);
@@ -341,8 +332,8 @@ transform:scale(120%);
 
 @media (max-width: 767px) {
   .main-nav-icon {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     transition: 0.25s;
     border-radius: 5%;
     padding: 5px;
@@ -352,8 +343,8 @@ transform:scale(120%);
 
 @media (max-width: 767px) {
   .main-nav-icon:hover {  
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     align-self: center;
     align-items: center;
     padding: 5px;

@@ -29,7 +29,7 @@
  
   .header-container {
     position: fixed;
-    background-color:#b4b4b4;
+    background-color:#e4e4e4;
     bottom: 0;
     display: flex;
     justify-content: center; 
@@ -209,17 +209,17 @@
 
   }
 
-  a {
+  /* a {
     background-color: white;
     border-radius: 50%;
     padding: 15px;
     border: solid black 2px;
 
-  }
+  } */
 
-  a:hover {
+  /* a:hover {
     border: gold solid 2px;
-  }
+  } */
 
   .main-nav-icon:hover {
   transform:scale(120%);
@@ -229,8 +229,8 @@
 
   @media (max-width: 767px) {
     .main-nav-icon {
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       transition: 0.25s;
       border-radius: 5%;
       padding: 5px;
@@ -240,8 +240,8 @@
 
   @media (max-width: 767px) {
     .main-nav-icon:hover {  
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       align-self: center;
       align-items: center;
       padding: 5px;
