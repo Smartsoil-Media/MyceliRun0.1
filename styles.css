@@ -298,6 +298,19 @@ input:focus, select:focus {
 
 /* FOOOTER  */
 
+a {
+  border-right: solid 5px #232323;
+  padding-right: 25px;
+  transition: 0.3s;
+
+}
+
+a:hover {
+  border-right: solid 5px #ffff;
+  padding-right: 25px;
+
+}
+
 
 .main-nav-icon {
   width: 80px;
@@ -309,9 +322,9 @@ input:focus, select:focus {
 }
 
 .header-container {
-  padding: 25px;
+  padding: 15px;
   position: fixed;
-  background-color:#b4b4b4;
+  background-color:#ededed;
   width: 100%;
   bottom: 0;
 }
