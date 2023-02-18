@@ -10,34 +10,14 @@ h1 {
   
 }
 
-a {
-  text-decoration: none;
-  color: white;
-  font-family: 'Allerta Stencil', sans-serif;
-  
-
-}
 
 h2, h3, h4, p {
   font-family: 'Abhaya Libre', serif;
   
 }
 
-header {
-  background-color: #2A2129;
-  
-}
 
 
-.header-container {
-  display: flex;
-  padding: 20px 25px;
-  gap: 50px;
-  
-
-
-
-}
 
 #submit-btn, #update-btn, #delete-btn {
 
@@ -108,19 +88,6 @@ label {
   }
 }
 
-.links-container {
-  margin-right: auto;
-  margin-top: auto;
-  margin-bottom: auto;
-  
-
-}
-
-.header-img {
-  width: 75px;
-  border-radius: 50%;
-  border: white 1px solid;
-}
 
 input, select {
   padding: 30px;
@@ -316,4 +283,79 @@ input:focus, select:focus {
 
 .hidden {
   display: none;
+}
+
+.form-instructions {
+  margin-bottom: 250px;
+
+}
+
+
+
+
+
+
+
+/* FOOOTER  */
+
+
+.main-nav-icon {
+  width: 80px;
+  height: 80px;
+  transition: 0.25s;
+  border-radius: 5%;
+  padding: 15px;
+
+}
+
+.header-container {
+  padding: 25px;
+  position: fixed;
+  background-color:#b4b4b4;
+  width: 100%;
+  bottom: 0;
+}
+
+.links-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+a {
+  background-color: white;
+  border-radius: 50%;
+  padding: 15px;
+  border: solid black 2px;
+
+}
+a:hover {
+  border: gold solid 2px;
+}
+
+.main-nav-icon:hover {
+transform:scale(120%);
+  cursor: pointer;
+}
+
+
+@media (max-width: 767px) {
+  .main-nav-icon {
+    width: 40px;
+    height: 40px;
+    transition: 0.25s;
+    border-radius: 5%;
+    padding: 5px;
+
+  }
+}
+
+@media (max-width: 767px) {
+  .main-nav-icon:hover {  
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    align-items: center;
+    padding: 5px;
+  }
 }
