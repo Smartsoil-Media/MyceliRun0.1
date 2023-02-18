@@ -221,6 +221,13 @@
     padding-right: 25px;
 
   }
+
+  @media (max-width: 767px) {
+    a {
+      border: none;
+      padding: none;;
+    }
+  }
   .main-nav-icon:hover {
   transform:scale(120%);
     cursor: pointer;

@@ -363,3 +363,10 @@ transform:scale(120%);
     padding: 5px;
   }
 }
+
+@media (max-width: 767px) {
+  a {
+    border: none;
+    padding: none;;
+  }
+}
