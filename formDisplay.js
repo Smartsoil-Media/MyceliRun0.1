@@ -137,7 +137,7 @@ document.getElementById('for-page-container').addEventListener('click', (ev) => 
   }
 
   function reloadpage(){
-    var returnURL = "https://stately-buttercream-702f49.netlify.app/" + Math.random() * 100;
+    var returnURL = "https://stately-buttercream-702f49.netlify.app/forms.html";
 
     setTimeout(function() 
     {
